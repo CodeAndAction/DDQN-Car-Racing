@@ -7,7 +7,7 @@ import random, math
 
 TOTAL_GAMETIME = 1000 # Max game time for one episode
 N_EPISODES = 10000
-REPLACE_TARGET = 100 
+REPLACE_TARGET = 50 
 
 game = GameEnv.RacingEnv()
 game.fps = 60
@@ -16,7 +16,7 @@ GameTime = 0
 GameHistory = []
 renderFlag = False
 
-ddqn_agent = DDQNAgent(alpha=0.0005, gamma=0.99, n_actions=5, epsilon=0.10, epsilon_end=0.10, epsilon_dec=0.999, replace_target= REPLACE_TARGET, batch_size=512, input_dims=19)
+ddqn_agent = DDQNAgent(alpha=0.0005, gamma=0.99, n_actions=5, epsilon=1.00, epsilon_end=0.10, epsilon_dec=0.9995, replace_target= REPLACE_TARGET, batch_size=512, input_dims=19)
 
 # if you want to load the existing model uncomment this line.
 # careful an existing model might be overwritten
